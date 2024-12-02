@@ -17,11 +17,12 @@ namespace BLL.DAL
 
         public DateTime? ReleaseDate { get; set; }
 
-        public bool? IsMultiplayer { get; set; }
+        public bool IsMultiplayer { get; set; }
 
+        [Range(0.01, double.MaxValue, ErrorMessage = "Price must be a positive number!")]
         public decimal? Price { get; set; }
 
-        public int? PublisherId { get; set; }
+        public int PublisherId { get; set; }
 
         public Publisher Publisher { get; set; }
     }

@@ -1,5 +1,7 @@
 using BLL.DAL;
+using BLL.Models;
 using BLL.Services;
+using BLL.Services.Bases;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,7 +16,7 @@ builder.Services.AddControllersWithViews();
 string connectionString = "server=(localdb)\\mssqllocaldb;database=GamesAppDB;trusted_connection=true;";
 builder.Services.AddDbContext<Db>(options => options.UseSqlServer(connectionString));
 builder.Services.AddScoped<IPublisherService, PublisherService>();
-
+builder.Services.AddScoped<IService<Game,GameModel>, GameService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

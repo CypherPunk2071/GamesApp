@@ -9,13 +9,12 @@ namespace BLL.DAL
 {
     public class Publisher
     {
-        public int? Id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [StringLength(70)]
         public string Name { get; set; }
 
-        public List<Game> Games { get; set; } = new List<Game>();
-
+        public List<Game> Games { get; set; }
     }
 }
