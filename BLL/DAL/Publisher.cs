@@ -15,6 +15,6 @@ namespace BLL.DAL
         [StringLength(50)]
         public string Name { get; set; }
 
-        public List<Game> Games { get; set; }
+        public List<Game> Games { get; set; } = new List<Game>();
     }
 }
